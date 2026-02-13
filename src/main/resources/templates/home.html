@@ -1,0 +1,105 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PulseCare Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans">
+
+<!-- 🔷 Top Contact Bar -->
+<div class="bg-blue-900 text-white text-sm py-2 px-10 flex justify-between">
+    <div>
+        📞 +91 98765 43210
+        ✉️ pulsecare@gmail.com
+    </div>
+    <div>
+        🕒 Open: 7:00 AM – 9:00 PM
+    </div>
+</div>
+
+<!-- 🔷 Navbar -->
+<nav class="bg-blue-600 text-white px-10 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">💙 PulseCare</h1>
+
+    <ul class="flex space-x-6">
+        <li><a href="/" class="hover:text-gray-200">Home</a></li>
+        <li><a href="/about" class="hover:text-gray-200">About</a></li>
+        <li><a href="/appointment" class="hover:text-gray-200">Book Appointment</a></li>
+        <li><a href="/login" class="hover:text-gray-200">Login</a></li>
+        <li><a href="/contact" class="hover:text-gray-200">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- 🔷 Hero Section -->
+<section class="relative">
+    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3"
+         class="w-full h-[500px] object-cover opacity-70">
+
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
+        <h2 class="text-5xl font-bold text-blue-900">Welcome To PulseCare</h2>
+        <p class="mt-4 text-lg text-gray-700">
+            Caring for Life with Compassion & Excellence
+        </p>
+        <a href="/appointment"
+           class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+            Book Appointment
+        </a>
+    </div>
+</section>
+
+<!-- 🔷 Services Section -->
+<section class="py-16 px-10 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">
+        Our Services
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            🚑
+            <h3 class="text-xl font-semibold mt-4">Emergency Care</h3>
+            <p class="mt-2 text-gray-600">
+                24/7 emergency medical services available.
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            👨‍⚕️
+            <h3 class="text-xl font-semibold mt-4">Expert Doctors</h3>
+            <p class="mt-2 text-gray-600">
+                Highly qualified specialists in all departments.
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            🏥
+            <h3 class="text-xl font-semibold mt-4">Modern Equipment</h3>
+            <p class="mt-2 text-gray-600">
+                Advanced technology for accurate diagnosis.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 🔷 Footer -->
+<footer class="bg-blue-900 text-white text-center py-6">
+    <p>© 2026 PulseCare Hospital. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+

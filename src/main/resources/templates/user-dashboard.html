@@ -1,0 +1,107 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2>User Dashboard</h2>-->
+
+<!--<a href="/user/doctors">View Doctors</a><br><br>-->
+<!--<a href="/user/book">Book Appointment</a>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PulseCare - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- 🔵 Navbar -->
+<div class="bg-blue-600 text-white px-10 py-4 flex justify-between">
+    <h1 class="text-2xl font-bold">💙 PulseCare</h1>
+
+    <div class="space-x-6">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/appointment" class="hover:text-gray-200">Book Appointment</a>
+        <a href="/contact" class="hover:text-gray-200">Contact</a>
+    </div>
+</div>
+
+<!-- 🔵 Hero Section -->
+<section class="bg-blue-50 py-20 text-center">
+    <h2 class="text-4xl font-bold text-blue-800 mb-4">
+        Welcome to PulseCare
+    </h2>
+    <p class="text-gray-600 text-lg mb-8">
+        Your Health, Our Priority.
+    </p>
+
+    <a href="/appointment"
+       class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+        Book Appointment
+    </a>
+</section>
+
+<!-- 🔵 Quick Actions -->
+<section class="py-16 px-10">
+
+    <h3 class="text-3xl font-bold text-center text-blue-800 mb-12">
+        Quick Access
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- View Doctors -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 text-center hover:shadow-2xl transition">
+            <h4 class="text-xl font-bold mb-4 text-blue-700">👨‍⚕ View Doctors</h4>
+            <p class="text-gray-600 mb-6">
+                Explore available doctors and specialties.
+            </p>
+            <a href="/user/doctors"
+               class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+                View
+            </a>
+        </div>
+
+        <!-- Book Appointment -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 text-center hover:shadow-2xl transition">
+            <h4 class="text-xl font-bold mb-4 text-blue-700">📅 Book Appointment</h4>
+            <p class="text-gray-600 mb-6">
+                Schedule your appointment easily.
+            </p>
+            <a href="/appointment"
+               class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+                Book
+            </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 text-center hover:shadow-2xl transition">
+            <h4 class="text-xl font-bold mb-4 text-blue-700">📞 Contact Us</h4>
+            <p class="text-gray-600 mb-6">
+                Reach out for any support or queries.
+            </p>
+            <a href="/contact"
+               class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+                Contact
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 🔵 Footer -->
+<footer class="bg-blue-600 text-white text-center py-4">
+    © 2026 PulseCare Hospital Management System
+</footer>
+
+</body>
+</html>

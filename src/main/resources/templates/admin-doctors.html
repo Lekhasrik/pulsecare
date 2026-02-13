@@ -1,0 +1,119 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
+<!--    <title>Doctors</title>-->
+<!--</head>-->
+<!--<body class="p-10">-->
+
+<!--<h2 class="text-2xl font-bold mb-4">Doctors List</h2>-->
+
+<!--<a href="/admin/add-doctor" class="bg-blue-600 text-white px-4 py-2 rounded">Add Doctor</a>-->
+
+<!--<table class="table-auto border mt-5 w-full">-->
+<!--    <tr class="bg-gray-200">-->
+<!--        <th>ID</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Specialization</th>-->
+<!--        <th>Fee</th>-->
+<!--    </tr>-->
+
+<!--    <tr th:each="d : ${doctors}">-->
+<!--        <td th:text="${d.id}"></td>-->
+<!--        <td th:text="${d.name}"></td>-->
+<!--        <td th:text="${d.specialization}"></td>-->
+<!--        <td th:text="${d.fee}"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin - Doctors</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<!-- 🔵 Top Navbar -->
+<div class="bg-blue-600 text-white px-10 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">💙 PulseCare Admin</h1>
+    <a href="/admin/dashboard"
+       class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        Dashboard
+    </a>
+</div>
+
+<div class="p-10 max-w-6xl mx-auto">
+
+    <!-- Header Section -->
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-3xl font-bold text-gray-800">
+            Doctors List
+        </h2>
+
+        <a href="/admin/add-doctor"
+           class="bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition shadow-md">
+            + Add Doctor
+        </a>
+    </div>
+
+    <!-- Table Card -->
+    <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+
+        <table class="min-w-full">
+
+            <!-- Table Header -->
+            <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="px-6 py-4 text-left">ID</th>
+                <th class="px-6 py-4 text-left">Name</th>
+                <th class="px-6 py-4 text-left">Specialization</th>
+                <th class="px-6 py-4 text-left">Consultation Fee</th>
+            </tr>
+            </thead>
+
+            <!-- Table Body -->
+            <tbody class="divide-y divide-gray-200">
+
+            <tr th:each="d : ${doctors}"
+                class="hover:bg-gray-50 transition duration-200">
+
+                <td class="px-6 py-4 font-medium text-gray-700"
+                    th:text="${d.id}"></td>
+
+                <td class="px-6 py-4 font-semibold text-gray-800"
+                    th:text="${d.name}"></td>
+
+                <td class="px-6 py-4 text-blue-600 font-medium"
+                    th:text="${d.specialization}"></td>
+
+                <td class="px-6 py-4 text-green-600 font-semibold"
+                    th:text="${d.fee}"></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

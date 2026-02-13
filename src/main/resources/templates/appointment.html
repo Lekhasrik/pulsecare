@@ -1,0 +1,162 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<table class="table-auto border">&ndash;&gt;-->
+<!--&lt;!&ndash;    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Patient</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Doctor</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Date</th>&ndash;&gt;-->
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    <tr th:each="appt : ${appointments}">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <td th:text="${appt.id}"></td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <td th:text="${appt.patient.name}"></td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <td th:text="${appt.doctor.name}"></td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <td th:text="${appt.date}"></td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </tr>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <tr th:each="appt : ${appointments}">&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${appt.id}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${appt.patientName}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${appt.doctorName}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${appt.date}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</table>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Appointments</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Appointments List</h2>-->
+
+<!--<a href="/appointment">Book New Appointment</a>-->
+<!--<br><br>-->
+
+<!--<table border="1">-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>Patient</th>-->
+<!--        <th>Doctor</th>-->
+<!--        <th>Date</th>-->
+<!--        <th>Status</th>-->
+<!--    </tr>-->
+
+<!--    <tr th:if="${#lists.isEmpty(appointments)}">-->
+<!--        <td colspan="4">No Appointments Found</td>-->
+<!--    </tr>-->
+
+<!--    <tr th:each="appt : ${appointments}">-->
+<!--        <td th:text="${appt.id}"></td>-->
+<!--        <td th:text="${appt.patientName}"></td>-->
+<!--        <td th:text="${appt.doctorName}"></td>-->
+<!--        <td th:text="${appt.date}"></td>-->
+<!--        <td th:text="${appt.status}"></td>-->
+<!--    </tr>-->
+
+<!--</table>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments - PulseCare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- 🔵 Navbar -->
+<div class="bg-blue-600 text-white px-10 py-4 flex justify-between">
+    <h1 class="text-2xl font-bold">💙 PulseCare</h1>
+
+    <div class="space-x-6">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/appointment" class="hover:text-gray-200">Book Appointment</a>
+        <a href="/login" class="hover:text-gray-200">Login</a>
+        <a href="/contact" class="hover:text-gray-200">Contact</a>
+    </div>
+</div>
+
+<!-- 🔵 Page Content -->
+<section class="py-12 px-10">
+
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800">
+            Appointments List
+        </h2>
+
+        <a href="/appointment"
+           class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+            + Book New Appointment
+        </a>
+    </div>
+
+    <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+
+        <table class="min-w-full">
+
+            <thead class="bg-blue-600 text-white">
+            <tr>
+                <th class="py-3 px-4 text-left">ID</th>
+                <th class="py-3 px-4 text-left">Patient</th>
+                <th class="py-3 px-4 text-left">Doctor</th>
+                <th class="py-3 px-4 text-left">Date</th>
+                <th class="py-3 px-4 text-left">Status</th>
+            </tr>
+            </thead>
+
+            <tbody class="text-gray-700">
+
+            <!-- If Empty -->
+            <tr th:if="${#lists.isEmpty(appointments)}">
+                <td colspan="5" class="text-center py-6 text-gray-500">
+                    No Appointments Found
+                </td>
+            </tr>
+
+            <!-- Data Rows -->
+            <tr th:each="appt : ${appointments}"
+                class="border-b hover:bg-gray-50">
+
+                <td class="py-3 px-4" th:text="${appt.id}"></td>
+                <td class="py-3 px-4" th:text="${appt.patientName}"></td>
+                <td class="py-3 px-4" th:text="${appt.doctorName}"></td>
+                <td class="py-3 px-4" th:text="${appt.date}"></td>
+
+                <!-- Status Badge -->
+                <td class="py-3 px-4">
+                    <span th:text="${appt.status}"
+                          th:classappend="${appt.status == 'PENDING'} ?
+                          'bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold' :
+                          'bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold'">
+                    </span>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+</body>
+</html>

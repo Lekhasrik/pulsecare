@@ -1,0 +1,107 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<h2>Login</h2>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<form action="/login" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="text" name="username" placeholder="Username"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="password" name="password" placeholder="Password"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button type="submit">Login</button>&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<a href="/register">Register</a>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2>Register</h2>-->
+
+<!--<form action="/register" method="post">-->
+<!--    <input type="text" name="username" placeholder="Username"><br><br>-->
+<!--    <input type="password" name="password" placeholder="Password"><br><br>-->
+
+<!--    &lt;!&ndash;    <select name="role">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <option value="USER">User</option>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <option value="ADMIN">Admin</option>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </select><br><br>&ndash;&gt;-->
+
+<!--    <button type="submit">Register</button>-->
+<!--</form>-->
+
+<!--<a href="/login">Login</a>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - PulseCare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- 🔵 Navbar -->
+<div class="bg-blue-600 text-white px-10 py-4 flex justify-between">
+    <h1 class="text-2xl font-bold">💙 PulseCare</h1>
+    <div class="space-x-6">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/contact" class="hover:text-gray-200">Contact</a>
+    </div>
+</div>
+
+<!-- 🔵 Login Section -->
+<section class="flex justify-center items-center h-screen -mt-20">
+
+    <div class="bg-white shadow-2xl rounded-2xl p-10 w-96">
+
+        <h2 class="text-3xl font-bold text-blue-800 text-center mb-8">
+            Login
+        </h2>
+
+        <form action="/login" method="post">
+
+            <input type="text"
+                   name="username"
+                   placeholder="Username"
+                   required
+                   class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required
+                   class="w-full p-3 border rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <button type="submit"
+                    class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition">
+                Login
+            </button>
+        </form>
+
+        <p class="text-center mt-6 text-gray-600">
+            Don’t have an account?
+            <a href="/register" class="text-blue-600 font-semibold hover:underline">
+                Register
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+</body>
+</html>

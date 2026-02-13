@@ -1,0 +1,138 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Contact - PulseCare</title>-->
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="bg-blue-600 text-white px-10 py-4 flex justify-between">-->
+<!--    <h1 class="text-2xl font-bold">💙 PulseCare</h1>-->
+<!--    <div class="space-x-6">-->
+<!--        <a href="/">Home</a>-->
+<!--        <a href="/about">About</a>-->
+<!--        <a href="/appointment">Book Appointment</a>-->
+<!--        <a href="/login">Login</a>-->
+<!--        <a href="/contact">Contact</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<section class="py-16 px-10">-->
+<!--    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">-->
+<!--        Contact Us-->
+<!--    </h2>-->
+
+<!--    <div class="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-xl">-->
+<!--        <p><strong>Phone:</strong> +91 98765 43210</p>-->
+<!--        <p><strong>Email:</strong> pulsecare@gmail.com</p>-->
+<!--        <p><strong>Address:</strong> Chennai, Tamil Nadu</p>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - PulseCare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- 🔵 Navbar -->
+<div class="bg-blue-600 text-white px-10 py-4 flex justify-between items-center shadow-md">
+    <h1 class="text-2xl font-bold">💙 PulseCare</h1>
+    <div class="space-x-6 font-medium">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/appointment" class="hover:text-gray-200">Book Appointment</a>
+        <a href="/login" class="hover:text-gray-200">Login</a>
+        <a href="/contact" class="underline">Contact</a>
+    </div>
+</div>
+
+<!-- 🔵 Contact Section -->
+<section class="py-20 px-6">
+
+    <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">
+        Get In Touch With Us
+    </h2>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+
+        <!-- Contact Info -->
+        <div class="bg-white p-10 rounded-2xl shadow-xl space-y-6">
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                Contact Information
+            </h3>
+
+            <div class="space-y-4 text-gray-700 text-lg">
+                <p>📞 <strong>Phone:</strong> +91 9345194565</p>
+                <p>📧 <strong>Email:</strong> pulsecare@gmail.com</p>
+                <p>📍 <strong>Address:</strong> Salem, Tamil Nadu</p>
+            </div>
+
+            <p class="text-gray-500 mt-6">
+                Our team is available 24/7 to assist you with appointments,
+                emergency care, and general inquiries.
+            </p>
+
+        </div>
+
+        <!-- Contact Form (UI only) -->
+        <div class="bg-white p-10 rounded-2xl shadow-xl">
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+                Send Us a Message
+            </h3>
+
+            <form class="space-y-4">
+
+                <input type="text"
+                       placeholder="Your Name"
+                       class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <input type="email"
+                       placeholder="Your Email"
+                       class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <textarea rows="4"
+                          placeholder="Your Message"
+                          class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 🔵 Footer -->
+<footer class="bg-blue-600 text-white text-center py-4 mt-16">
+    © 2026 PulseCare Hospital. All Rights Reserved.
+</footer>
+
+</body>
+</html>

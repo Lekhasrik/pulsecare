@@ -1,0 +1,166 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
+<!--    <title>Appointments</title>-->
+<!--</head>-->
+<!--<body class="p-10">-->
+
+<!--<h2 class="text-2xl font-bold mb-4">Appointments</h2>-->
+
+<!--<table class="table-auto border mt-5 w-full">-->
+<!--    <tr class="bg-gray-200">-->
+<!--        <th>ID</th>-->
+<!--        <th>Patient</th>-->
+<!--        <th>Doctor</th>-->
+<!--        <th>Date</th>-->
+<!--        <th>Status</th>-->
+<!--        <th>Mark</th>-->
+<!--    </tr>-->
+
+<!--&lt;!&ndash;    <tr th:each="a : ${appointments}">&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${a.id}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${a.patientName}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${a.doctorName}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${a.date}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <td th:text="${a.status}"></td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a th:if="${appt.status == 'PENDING'}"&ndash;&gt;-->
+<!--&lt;!&ndash;               th:href="@{'/complete/' + ${appt.id}}">&ndash;&gt;-->
+<!--&lt;!&ndash;                Mark Completed&ndash;&gt;-->
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </td>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+
+<!--    <tr th:each="a : ${appointments}">-->
+<!--        <td th:text="${a.id}"></td>-->
+<!--        <td th:text="${a.patientName}"></td>-->
+<!--        <td th:text="${a.doctorName}"></td>-->
+<!--        <td th:text="${a.date}"></td>-->
+
+<!--        <td>-->
+<!--        <span th:if="${a.status == 'PENDING'}" class="text-orange-500">-->
+<!--            PENDING-->
+<!--        </span>-->
+<!--            <span th:if="${a.status == 'COMPLETED'}" class="text-green-600">-->
+<!--            COMPLETED-->
+<!--        </span>-->
+<!--        </td>-->
+
+<!--        <td>-->
+<!--            <a th:if="${a.status == 'PENDING'}"-->
+<!--               th:href="@{'/admin/complete/' + ${a.id}}"-->
+<!--               class="text-blue-600 underline">-->
+<!--                Mark Completed-->
+<!--            </a>-->
+<!--        </td>-->
+<!--    </tr>-->
+
+<!--</table>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin Appointments</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<!-- 🔵 Top Navbar -->
+<div class="bg-blue-600 text-white px-10 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">💙 PulseCare Admin</h1>
+    <a href="/admin/dashboard"
+       class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        Dashboard
+    </a>
+</div>
+
+<div class="p-10">
+
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        Appointment Management
+    </h2>
+
+    <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+
+        <table class="min-w-full">
+
+            <!-- Table Header -->
+            <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="px-6 py-4 text-left">ID</th>
+                <th class="px-6 py-4 text-left">Patient</th>
+                <th class="px-6 py-4 text-left">Doctor</th>
+                <th class="px-6 py-4 text-left">Date</th>
+                <th class="px-6 py-4 text-left">Status</th>
+                <th class="px-6 py-4 text-left">Action</th>
+            </tr>
+            </thead>
+
+            <!-- Table Body -->
+            <tbody class="divide-y divide-gray-200">
+
+            <tr th:each="a : ${appointments}"
+                class="hover:bg-gray-50 transition duration-200">
+
+                <td class="px-6 py-4 font-medium" th:text="${a.id}"></td>
+                <td class="px-6 py-4" th:text="${a.patientName}"></td>
+                <td class="px-6 py-4" th:text="${a.doctorName}"></td>
+                <td class="px-6 py-4" th:text="${a.date}"></td>
+
+                <!-- Status Badge -->
+                <td class="px-6 py-4">
+                    <span th:if="${a.status == 'PENDING'}"
+                          class="px-3 py-1 rounded-full text-sm font-semibold bg-yellow-100 text-yellow-700">
+                        PENDING
+                    </span>
+
+                    <span th:if="${a.status == 'COMPLETED'}"
+                          class="px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-700">
+                        COMPLETED
+                    </span>
+                </td>
+
+                <!-- Action Button -->
+                <td class="px-6 py-4">
+                    <a th:if="${a.status == 'PENDING'}"
+                       th:href="@{'/admin/complete/' + ${a.id}}"
+                       class="bg-blue-600 text-white px-4 py-1 rounded-lg hover:bg-blue-700 transition text-sm">
+                        Mark Completed
+                    </a>
+
+                    <span th:if="${a.status == 'COMPLETED'}"
+                          class="text-gray-400 font-medium">
+                        ✔ Done
+                    </span>
+                </td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

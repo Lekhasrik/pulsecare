@@ -49,6 +49,8 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String bookedBy;
+
     private String patientName;
     private String doctorName;
     private LocalDate date;
@@ -70,4 +72,9 @@ public class Appointment {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public void setBookedBy(String bookedBy) {
+        this.bookedBy = bookedBy;
+    }
+
 }

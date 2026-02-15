@@ -67,6 +67,7 @@ import java.util.List;
 @Service
 public class AppointmentService {
 
+    private AppointmentRepository appointmentRepository;
     private final AppointmentRepository repository;
 
     public AppointmentService(AppointmentRepository repository) {
@@ -89,5 +90,9 @@ public class AppointmentService {
         repository.save(appointment);
     }
 
+    public void saveAdminAppointment(Appointment appointment) {
+        appointment.setBookedBy("ADMIN");
+        appointmentRepository.save(appointment);
+    }
 
 }

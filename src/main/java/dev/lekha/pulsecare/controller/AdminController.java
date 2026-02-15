@@ -8,10 +8,12 @@ package dev.lekha.pulsecare.controller;
 
 import dev.lekha.pulsecare.model.Patient;
 import dev.lekha.pulsecare.model.Doctor;
+import dev.lekha.pulsecare.repository.AppointmentRepository;
 import dev.lekha.pulsecare.service.PatientService;
 import dev.lekha.pulsecare.service.DoctorService;
 import dev.lekha.pulsecare.service.AppointmentService;
 import dev.lekha.pulsecare.model.Appointment;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,9 @@ public class AdminController {
     private final PatientService patientService;
     private final DoctorService doctorService;
     private final AppointmentService appointmentService;
+   // @Autowired
+    private AppointmentRepository appointmentRepository;
+
 
     public AdminController(PatientService patientService,
                            DoctorService doctorService,
@@ -106,6 +111,24 @@ public class AdminController {
     }
 
     //new
+    @GetMapping("/admin/book-appointment")
+    public String adminBookPage() {
+        return "admin-book-appointment";
+    }
+
+    @PostMapping("/admin/save-appointment")
+    public String saveAdminAppointment(Appointment appointment) {
+        appointment.setBookedBy("ADMIN");
+        appointmentRepository.save(appointment);
+        return "redirect:/admin/appointments";
+    }
+
+
+    @GetMapping("/test")
+    @ResponseBody
+    public String test() {
+        return "Working";
+    }
 
 
 
